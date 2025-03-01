@@ -1,0 +1,36 @@
+Nome,Prezzo,Quantità
+Latte,1.50,20
+Pane,1.00,15
+Pasta,1.20,30
+Riso,2.00,25
+Biscotti,2.50,10
+Uova,3.00,12
+Zucchero,1.80,18
+Sale,1.00,20
+Caffè,5.00,8
+Tè,3.50,10
+Snack,1.20,25
+Bibita,1.50,30
+Patatine,2.00,20
+Cioccolato,1.80,15
+Soda,2.50,12
+Yogurt,1.60,18
+Panino,3.00,10
+Pere,2.20,15
+Gelato,2.80,10
+Cereali,3.50,12
+Barrette,2.00,14
+Popcorn,1.90,16
+Caramelle,1.50,20
+Gomme,1.00,25
+Pizza,4.50,10
+Hamburger,5.00,8
+Formaggio,2.20,12
+Affettati,3.80,10
+Salsa,2.50,8
+Ketchup,1.50,10
+Nutella, 2.2, 100
+Cioccolata, 0.8, 24
+Acqua, 0.6, 80
+Birra, 1.2, 90
+Vino, 8.9, 20
