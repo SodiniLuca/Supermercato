@@ -87,9 +87,14 @@ public class Supermercato{
             System.out.println("L'elenco dei prodotti è vuoto.");
         } else {
             System.out.println("Elenco dei prodotti:");
-            for (Prodotto p : listaProdotti) {
-                System.out.println(p); // Usa il metodo toString() della classe Prodotto per stampare
+            for (int i = 0; i < listaProdotti.size(); i++) {
+                System.out.println(listaProdotti.get(i)); // Usa il metodo toString() della classe Prodotto per stampare
+             
             }
+          /*   for (Prodotto p : listaProdotti) {
+                System.out.println(p); // Usa il metodo toString() della classe Prodotto per stampare
+
+            } */
         }
     }
 

@@ -149,13 +149,6 @@ public class Cliente{
 		return risultato;
 	}
 	
-	private static double prendiDouble(String frase){
-		System.out.print(frase);
-		double risultato = scanner.nextDouble();  // Leggi il numero decimale
-		scanner.nextLine();  // Consuma il carattere di fine riga rimanente
-		return risultato;
-	}
-	
 	public int ricercaIndiceProdotto(String nome){
 		for (int i = 0; i < this.carrello.size(); i++){
 			if (this.carrello.get(i).nome.equals(nome)){

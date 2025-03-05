@@ -34,4 +34,3 @@ Cioccolata,0.8,24
 Acqua,0.6,80
 Birra,1.2,90
 Vino,8.9,20
-Pasta,1.2,10

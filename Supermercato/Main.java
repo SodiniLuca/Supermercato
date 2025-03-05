@@ -19,6 +19,7 @@ public class Main{
         System.out.println("1) Aggiungi al carrello");
         System.out.println("2) Rimuovi dal carrello");
         System.out.println("3) Stampa contenuto carrello");
+		System.out.println("4) Vista scaffali");
         System.out.println("0) Genera scontrino");
         System.out.print("Scegli un'opzione: ");
         return scanner.nextLine();
@@ -38,12 +39,13 @@ public class Main{
     public static void main(String[] args) {
         // Scegli il ruolo (Cliente o Gestore)
         String ruolo = menu();
+		Supermercato supermercato = new Supermercato();
         switch (ruolo) {
             case "1":
                 // Modalità Cliente
                 String sceltaCliente = menuCliente();
                 Cliente cliente = new Cliente();
-                while (!sceltaCliente.equals("4")) {
+                while (!sceltaCliente.equals("5")) {
                     switch (sceltaCliente) {
                         case "1":
                             if (cliente.aggiungiProdotto()) {
@@ -62,18 +64,21 @@ public class Main{
                         case "3":
                             cliente.stampaCarrello();
                             break;
+						case "4":
+							Supermercato.stampaDaArrayList(supermercato.scaffali);
+							break;
                         case "0":
                             // Prima stampa lo scontrino
                             Cliente.stampaScontrino(cliente.carrello);
                             // Poi esci dal ciclo
-                            sceltaCliente = "4";  // Imposta sceltaCliente su 4 per uscire dal ciclo
+                            sceltaCliente = "5";  // Imposta sceltaCliente su 5 per uscire dal ciclo
                             break;
                         default:
                             System.out.println("Scelta non valida. Riprova.");
                             break;
                     }
                     // Dopo ogni switch, chiedi di nuovo la scelta
-                    if (!sceltaCliente.equals("4")) {
+                    if (!sceltaCliente.equals("5")) {
                         sceltaCliente = menuCliente();
                     }
                 }
@@ -81,7 +86,6 @@ public class Main{
             case "2":
                 // Modalità Gestore
                 String sceltaGestore = menuGestore();
-                Supermercato supermercato = new Supermercato();
                 while (!sceltaGestore.equals("0")) {
                     switch (sceltaGestore) {
                         case "1":
