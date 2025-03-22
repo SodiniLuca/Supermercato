@@ -11,7 +11,10 @@ public class Cliente{
 		this.carrello = new ArrayList<>();
 	}
 	
-
+	/** 
+	 * Aggiunge un prodotto al carrello se disponibile nel supermercato.
+	 * @return true se il prodotto è stato aggiunto, false altrimenti.
+	 */
 	public boolean aggiungiProdotto(){
 		String nome = prendiString("Inserire il nome del prodotto da aggiungere al carrello: ");
 		int i = supermercato.ricercaIndiceProdotto(nome);
@@ -48,6 +51,10 @@ public class Cliente{
 		
 	}
 	
+	/** 
+	 * Rimuove un prodotto dal carrello.
+	 * @return true se la rimozione è avvenuta con successo, false altrimenti.
+	 */
 	public boolean rimuoviProdotto(){
 		String nome = prendiString("Inserire il nome del prodotto da rimuovere dal carrello: ");
 		int i = supermercato.ricercaIndiceProdotto(nome);
@@ -82,6 +89,9 @@ public class Cliente{
 		
 	}
 
+	/** 
+	 * Stampa il contenuto attuale del carrello.
+	 */
 	public void stampaCarrello(){
 		if (this.carrello.isEmpty()){
 			System.out.println("Carrello vuoto");
@@ -94,6 +104,10 @@ public class Cliente{
 		}
 	}
 
+	/** 
+	 * Stampa lo scontrino con il totale degli acquisti.
+	 * @param prodotti Lista di prodotti acquistati.
+	 */
 	public static void stampaScontrino(ArrayList<Prodotto> prodotti) {
 		// Inizializza la variabile 'totale' che conterrà il totale dell'importo di tutti i prodotti
 		double totale = 0.0;
@@ -136,12 +150,21 @@ public class Cliente{
 		System.out.println("**********************************\n");
 	}
 	
-
+	/** 
+	 * Legge una stringa dall'input utente.
+	 * @param frase Messaggio da visualizzare all'utente.
+	 * @return Stringa inserita dall'utente.
+	 */
 	private static String prendiString(String frase){
 		System.out.print(frase);
 		return scanner.nextLine();
 	}
 	
+	/** 
+	 * Legge un intero dall'input utente.
+	 * @param frase Messaggio da visualizzare all'utente.
+	 * @return Numero intero inserito dall'utente.
+	 */
 	private static int prendiInt(String frase){
 		System.out.print(frase);
 		int risultato = scanner.nextInt();  // Leggi il numero
@@ -149,6 +172,11 @@ public class Cliente{
 		return risultato;
 	}
 	
+	/** 
+	 * Cerca un prodotto nel carrello.
+	 * @param nome Nome del prodotto da cercare.
+	 * @return Indice del prodotto nel carrello, -1 se non trovato.
+	 */
 	public int ricercaIndiceProdotto(String nome){
 		for (int i = 0; i < this.carrello.size(); i++){
 			if (this.carrello.get(i).nome.equals(nome)){

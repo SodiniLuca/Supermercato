@@ -15,7 +15,6 @@ public class Supermercato{
 
     /**
      * Legge un file di prodotti e li carica in un ArrayList di oggetti Prodotto.
-     * 
      * @param nomeFile Il percorso del file da leggere.
      * @return Un ArrayList contenente tutti i prodotti letti dal file.
      */
@@ -43,7 +42,6 @@ public class Supermercato{
 
     /**
      * Scrive una lista di prodotti su un file di testo.
-     * 
      * @param nomeFile Il percorso del file su cui scrivere.
      * @param listaProdotti L'ArrayList di oggetti Prodotto da salvare nel file.
      */
@@ -63,7 +61,6 @@ public class Supermercato{
 
     /**
      * Legge e stampa il contenuto di un file di prodotti.
-     * 
      * @param nomeFile Il percorso del file da stampare.
      */
     public static void stampaDaFile(String nomeFile) {
@@ -79,7 +76,6 @@ public class Supermercato{
 
     /**
      * Stampa direttamente i prodotti presenti in un ArrayList.
-     * 
      * @param listaProdotti L'ArrayList di prodotti da stampare.
      */
     public static void stampaDaArrayList(ArrayList<Prodotto> listaProdotti) {
@@ -98,11 +94,21 @@ public class Supermercato{
         }
     }
 
+    /** 
+     * Chiede all'utente di inserire una stringa.
+     * @param frase Messaggio da visualizzare.
+     * @return Stringa inserita dall'utente.
+     */
 	private static String prendiString(String frase){
 		System.out.print(frase);
 		return scanner.nextLine();
 	}
 	
+    /** 
+     * Chiede all'utente di inserire un numero intero.
+     * @param frase Messaggio da visualizzare.
+     * @return Numero intero inserito dall'utente.
+     */
 	private static int prendiInt(String frase){
 		System.out.print(frase);
 		int risultato = scanner.nextInt();  // Leggi il numero
@@ -110,6 +116,11 @@ public class Supermercato{
 		return risultato;
 	}
 	
+    /** 
+     * Chiede all'utente di inserire un numero decimale.
+     * @param frase Messaggio da visualizzare.
+     * @return Numero decimale inserito dall'utente.
+     */
 	private static double prendiDouble(String frase) {
 		double risultato = 0.0;
 		boolean valido = false;
@@ -126,23 +137,29 @@ public class Supermercato{
 		return risultato;
 	}
 	
-	
-public void aggiungiProdotto() {
-    String nome = prendiString("Inserire il nome del prodotto: ");
-    
-    // Controlla la quantità
-    int quantita = prendiInt("Inserire la quantità del prodotto presente: ");
-    
-    // Controlla il costo
-    double costo = prendiDouble("Inserire il costo del prodotto: ");
-    
-    // Aggiungi il prodotto agli scaffali
-    this.scaffali.add(new Prodotto(nome, quantita, costo));
-    
-    // Salva gli scaffali nel file
-    scriviSuFile(nomeFile, this.scaffali);
-}
-	
+	/** 
+     * Aggiunge un nuovo prodotto agli scaffali.
+     */
+    public void aggiungiProdotto() {
+        String nome = prendiString("Inserire il nome del prodotto: ");
+        
+        // Controlla la quantità
+        int quantita = prendiInt("Inserire la quantità del prodotto presente: ");
+        
+        // Controlla il costo
+        double costo = prendiDouble("Inserire il costo del prodotto: ");
+        
+        // Aggiungi il prodotto agli scaffali
+        this.scaffali.add(new Prodotto(nome, quantita, costo));
+        
+        // Salva gli scaffali nel file
+        scriviSuFile(nomeFile, this.scaffali);
+    }
+
+	/** 
+     * Rimuove un prodotto dagli scaffali.
+     * @return true se il prodotto è stato rimosso, false altrimenti.
+     */
 	public boolean rimuoviProdotto(){
 		int i = ricercaIndiceProdotto(prendiString("Inserisci il nome del prodotto da rimuovere: "));
 		if (i != -1){
@@ -154,7 +171,12 @@ public void aggiungiProdotto() {
 			return false;
 		}
 	}
-	
+
+	/** 
+     * Cerca l'indice di un prodotto negli scaffali.
+     * @param nome Nome del prodotto da cercare.
+     * @return Indice del prodotto negli scaffali, -1 se non trovato.
+     */
 	public int ricercaIndiceProdotto(String nome){
 		for (int i = 0; i < this.scaffali.size(); i++){
 			if (this.scaffali.get(i).nome.equals(nome)){
@@ -164,6 +186,10 @@ public void aggiungiProdotto() {
 		return -1;
 	}
 
+    /** 
+     * Aggiunge un prodotto agli scaffali tramite parametro.
+     * @param p Prodotto da aggiungere.
+     */
 	public void aggiungiProdottoConParametro(Prodotto p){
 		this.scaffali.add(p);
 	}

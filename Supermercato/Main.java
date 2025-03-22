@@ -4,7 +4,10 @@ public class Main{
 
     final static Scanner scanner = new Scanner(System.in);
 
-    // Metodo per il menu principale (scegli ruolo)
+    /** 
+     * Mostra il menu iniziale per scegliere il ruolo.
+     * @return Scelta dell'utente come stringa.
+     */
     public static String menu() {
         System.out.println("Benvenuto nel nostro supermercato!");
         System.out.println("Scegli il ruolo con il quale utilizzare questa applicazione:");
@@ -13,7 +16,10 @@ public class Main{
         return scanner.nextLine();
     }
 
-    // Metodo per il menu del cliente
+    /** 
+     * Mostra il menu del cliente con le possibili azioni.
+     * @return Scelta dell'utente come stringa.
+     */
     public static String menuCliente() {
         System.out.println("\n--- MENU CLIENTE ---");
         System.out.println("1) Aggiungi al carrello");
@@ -25,7 +31,10 @@ public class Main{
         return scanner.nextLine();
     }
 
-    // Metodo per il menu del gestore
+    /** 
+     * Mostra il menu del gestore con le possibili azioni.
+     * @return Scelta dell'utente come stringa.
+     */
     public static String menuGestore() {
         System.out.println("\n--- MENU GESTORE ---");
         System.out.println("1) Aggiungi prodotto");
@@ -36,6 +45,10 @@ public class Main{
         return scanner.nextLine();
     }
     
+    /** 
+     * Metodo principale che avvia il programma e gestisce le operazioni di cliente e gestore.
+     * @param args Argomenti passati al programma (non utilizzati).
+     */
     public static void main(String[] args) {
         // Scegli il ruolo (Cliente o Gestore)
         String ruolo = menu();
